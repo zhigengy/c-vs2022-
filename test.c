@@ -1,20 +1,20 @@
 #include<stdio.h>
-//Çó¹¤×Ê
+//æ±‚å·¥èµ„
 //int main(){
 //	int age=;
 //	char rank;
-//	printf("ÊäÈë¹¤Áä£º");
+//	printf("è¾“å…¥å·¥é¾„ï¼š");
 //	scanf("%d", &age);
 //	getchar();
-//	printf("ÊäÈëÖ°¹¤¼¶±ğ£º");
+//	printf("è¾“å…¥èŒå·¥çº§åˆ«ï¼š");
 //	scanf("%c", &rank);
-//	//»ù±¾¹¤×Ê
+//	//åŸºæœ¬å·¥èµ„
 //	int foundment;
 //	if (age >= 20)
 //		foundment = 1800;
 //	else
 //		foundment = 800 + (age / 3) * 100;
-//	//½±½ğ
+//	//å¥–é‡‘
 //	float prize;
 //	switch (rank) {
 //	case'A':
@@ -33,17 +33,17 @@
 //		prize = foundment * 0;
 //		break;
 //	default:
-//		printf("ÊäÈë´íÎó");
+//		printf("è¾“å…¥é”™è¯¯");
 //		break;
 //	}
 //	float salary;
 //	salary = foundment + prize;
-//	printf("Êµ·¢¹¤×Ê=%f", salary);
+//	printf("å®å‘å·¥èµ„=%f", salary);
 //	
 //	return 0;
 //}
  
-//Êä³öÉúÈÕ
+//è¾“å‡ºç”Ÿæ—¥
 //int main() {
 //	int year, month, day;
 //	scanf("%4d%2d%2d", &year, &month, &day);
@@ -51,7 +51,7 @@
 //	return 0;
 //}
 
-//×ªÒå×Ö·ûµÄÊ¹ÓÃ
+//è½¬ä¹‰å­—ç¬¦çš„ä½¿ç”¨
 //int main() {
 //	float salary;
 //	printf("\asalary:");
@@ -62,7 +62,7 @@
 //	return 0;
 //} 
 
-//Çó×î´óÖµ
+//æ±‚æœ€å¤§å€¼
 //int main() {
 //	int arr[10] = { 0 };
 //	int i = 0;
@@ -83,7 +83,7 @@
 //	return 0;
 //}
 
-//ÇóÇòµÄÌå»ı
+//æ±‚çƒçš„ä½“ç§¯
 //int main() {
 //	float r = 0.0f;
 //	scanf("%f", &r);
@@ -95,13 +95,13 @@
 //
 //}
 
-//¹æ·¶ 
+//è§„èŒƒ 
 //int a = 0;
 //float b = 0.0f;
 //double c = 0.0;
 
-//¿ÉÖØ¸´
-//ì³²¨ÄÇÆõÊıÁĞ
+//å¯é‡å¤
+//æ–æ³¢é‚£å¥‘æ•°åˆ—
 //int main() {
 //	int a = 0, b = 1, c = 0,i = 0;
 //	scanf("%d", &a);
@@ -117,7 +117,7 @@
 //	return 0;
 // }
 
-//ì³²¨ÄÇÆõÊıÁĞÇóºÍ
+//æ–æ³¢é‚£å¥‘æ•°åˆ—æ±‚å’Œ
 //int main() {
 //	int a = 0, b = 1, c = 0,i = 0;
 //	int sum = 0;
@@ -142,7 +142,7 @@
 //	int a = 0;
 //	int sum = 0;
 //	for (a = 1; a <= 10; a++) {
-//		int ret = 1;//ºÜÖØÒª
+//		int ret = 1;//å¾ˆé‡è¦
 //		for (i = 1; i <= a; i++) {
 //			ret = ret * i;
 //		}
@@ -151,7 +151,7 @@
 //	printf("%d", sum);
 //	return 0;
 //}
-// ¿ÉÖØ¸´
+// å¯é‡å¤
 //int main() {
 //	int i = 0;
 //	int ret = 1;
@@ -163,8 +163,8 @@
 //	printf("%d", sum);
 //	return 0;
 //}
-//¿ÉÖØ¸´Á·Ï°
-////²éÕÒÓĞĞòÊı×éÖĞµÄÊı×Ö£¨¶ş·Ö²éÕÒ£©
+//å¯é‡å¤ç»ƒä¹ 
+////æŸ¥æ‰¾æœ‰åºæ•°ç»„ä¸­çš„æ•°å­—ï¼ˆäºŒåˆ†æŸ¥æ‰¾ï¼‰
 //int main() {
 //	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
 //	int k = 6;
@@ -177,7 +177,7 @@
 //		int mid = (left + right) / 2;
 //		if (arr[mid] == k) {
 //
-//			printf("ÏÂ±êÎª%d", mid);
+//			printf("ä¸‹æ ‡ä¸º%d", mid);
 //			break;
 //		}
 //		else if (arr[mid] < k) {
@@ -192,7 +192,7 @@
 //	return 0;
 //}
 
-////Öğ²½¸¡ÏÖ
+////é€æ­¥æµ®ç°
 //#include <windows.h>
 //#include<stdlib.h>
 //int main() {
@@ -205,8 +205,8 @@
 //		arr2[right] = arr1[right];
 //		printf("%s\n", arr2);
 //		Sleep(1000);//#include <windows.h>
-//		//Çå¿ÕÆÁÄ»
-//		system("cls");//#include<stdlib.h>//²»¹ıvsÃ»ÓĞÒ²ÄÜÓÃ
+//		//æ¸…ç©ºå±å¹•
+//		system("cls");//#include<stdlib.h>//ä¸è¿‡vsæ²¡æœ‰ä¹Ÿèƒ½ç”¨
 //
 //		left++;
 //		right--;
@@ -215,10 +215,10 @@
 //	return 0;
 //}
 
-//µçÄÔ²úÉúËæ»úÊı£¨1--100)
-//ÄãÀ´²Â
-//²Â´ó/Ğ¡ÁË
-//²Â¶Ô½áÊø
+//ç”µè„‘äº§ç”Ÿéšæœºæ•°ï¼ˆ1--100)
+//ä½ æ¥çŒœ
+//çŒœå¤§/å°äº†
+//çŒœå¯¹ç»“æŸ
 //#include <stdlib.h>
 //#include <time.h>
 //void menu() {
@@ -234,25 +234,25 @@
 //}
 //void game() {
 //	int ret = 0;
-//	ret = rand() % 100 + 1;//Éú³É1µ½100µÄËæ»úÊı
+//	ret = rand() % 100 + 1;//ç”Ÿæˆ1åˆ°100çš„éšæœºæ•°
 //	//printf("%d\n", ret);
 //	int guess = 0;
 //	int ci = 0;
-//	//²ÂÊı×Ö
+//	//çŒœæ•°å­—
 //	while (1) {
-//		printf("ÇëÊäÈëÊı×Ö____\b\b\b\b");
+//		printf("è¯·è¾“å…¥æ•°å­—____\b\b\b\b");
 //		scanf("%d", &guess);
 //		if (guess > ret) {
-//			printf("²Â´óÁË\n");
+//			printf("çŒœå¤§äº†\n");
 //			ci++;
 //		}
 //		else if (guess < ret) {
-//			printf("²ÂĞ¡ÁË\n");
+//			printf("çŒœå°äº†\n");
 //			ci++;
 //		}
 //		else {
-//			printf("²Â¶ÔÁË\n");
-//			printf("²Â²â´ÎÊıÎª%d\n", ci+1);
+//			printf("çŒœå¯¹äº†\n");
+//			printf("çŒœæµ‹æ¬¡æ•°ä¸º%d\n", ci+1);
 //			break;
 //		}
 //			
@@ -261,21 +261,21 @@
 //}
 //int main() {
 //	int i = 0;
-//	srand((unsigned int)time(NULL));//¸øËæ»úÊıÀ´¸ö¿ªÊ¼
+//	srand((unsigned int)time(NULL));//ç»™éšæœºæ•°æ¥ä¸ªå¼€å§‹
 //	do {
 //		menu();
-//		printf("ÇëÑ¡Ôñ____\b\b\b\b");
+//		printf("è¯·é€‰æ‹©____\b\b\b\b");
 //		scanf("%d", &i);
 //		switch (i) {
 //		case 1:
-//			printf("½øÈëÓÎÏ·\n");
+//			printf("è¿›å…¥æ¸¸æˆ\n");
 //			game();
 //			goto end;
 //		case 0:
-//			printf("ÍË³öÓÎÏ·\n");
+//			printf("é€€å‡ºæ¸¸æˆ\n");
 //			break;
 //		default:
-//			printf("ÊäÈë´íÎó£¬ÖØĞÂÊäÈë\n");
+//			printf("è¾“å…¥é”™è¯¯ï¼Œé‡æ–°è¾“å…¥\n");
 //			break;
 //
 //
@@ -283,20 +283,20 @@
 //		
 //	} while (i);
 //end:
-//	printf("ÓÎÏ·½áÊø\n");
+//	printf("æ¸¸æˆç»“æŸ\n");
 //	
 //	return 0;
 //}
 
-////¹Ø»úĞ¡³ÌĞò
+////å…³æœºå°ç¨‹åº
 //#include <string.h>
 //int main() {
 //	char input[20] = { 0 };
 //	system("shutdown -s -t 360");
 //	again:
-//	printf("60Ãëºó¹Ø»ú£¬ÊäÈë¡°ÎÒÊÇÖí¡± ¼´¿ÉÈ¡Ïû¹Ø»ú\n");
+//	printf("60ç§’åå…³æœºï¼Œè¾“å…¥â€œæˆ‘æ˜¯çŒªâ€ å³å¯å–æ¶ˆå…³æœº\n");
 //	scanf("%s", input);
-//	if (strcmp(input, "ÎÒÊÇÖí") == 0) {
+//	if (strcmp(input, "æˆ‘æ˜¯çŒª") == 0) {
 //		system("shutdown -a");
 //
 //	}
@@ -307,7 +307,7 @@
 //}
 //
 
-//Ğ´³ö100µ½200µÄËùÓĞËØÊı
+//å†™å‡º100åˆ°200çš„æ‰€æœ‰ç´ æ•°
 //#include <math.h>
 //int sushu(int n) {
 //	int j = 0;
@@ -320,7 +320,7 @@
 //int main() {
 //	int count = 0;
 //	int i = 0;
-//	for (i = 101; i <= 200; i += 2) {//Å¼ÊıÒ»¶¨²»ÊÇËØÊı£¬ËùÒÔÌø¹ıÅ¼Êı
+//	for (i = 101; i <= 200; i += 2) {//å¶æ•°ä¸€å®šä¸æ˜¯ç´ æ•°ï¼Œæ‰€ä»¥è·³è¿‡å¶æ•°
 //		if (sushu(i)) {
 //			count++;
 //			printf("%d ", i);
@@ -330,18 +330,18 @@
 //	return 0;
 //}
 
-//¸øÊı×éÖĞµÄÊı¼ÆÊı
+//ç»™æ•°ç»„ä¸­çš„æ•°è®¡æ•°
 //void cmp(int i,int n,int arr1[],int arr2[],int j) {
 //	int x = 0;
 //	for (i = 0; i < n; i++) {
 //		if (arr1[i] == arr2[j])
 //			x++;
 //	}
-//	//Êä³ö
+//	//è¾“å‡º
 //	printf("%d\n", x);
 //}
 //int main() {
-//	//ÊäÊı¾İ½øÊı×éa
+//	//è¾“æ•°æ®è¿›æ•°ç»„a
 //	int n = 0;
 //	int i = 0;
 //	int j = 0;
@@ -352,20 +352,20 @@
 //	for (i = 0; i < n; i++) {
 //		scanf("%d", &arr1[i]);
 //	}
-//	//ÕÒµ½Êı×éaÖĞ×î´óµÄÊıM
+//	//æ‰¾åˆ°æ•°ç»„aä¸­æœ€å¤§çš„æ•°M
 //
 //	for (i = 0; i < n; i++) {
 //		if (arr1[i] > max)
 //			max = arr1[i];
 //	}
 //	//printf("%d", max);
-//	//ĞÂÊı×éb 0~M
+//	//æ–°æ•°ç»„b 0~M
 //	for (i = 0, j = 0; j <= max; i++, j++) {
 //		arr2[i] = j;
 //	}
-//	//a Êı×éÊıÓëbÊı×é±È½ÏÏàÍ¬µÄ´ÎÊı¾Í¼ÓÒ»
+//	//a æ•°ç»„æ•°ä¸bæ•°ç»„æ¯”è¾ƒç›¸åŒçš„æ¬¡æ•°å°±åŠ ä¸€
 //	for (j = 0; j <= max; j++) {
-//		cmp(i, n, arr1, arr2, j);//±È½Ïº¯Êı
+//		cmp(i, n, arr1, arr2, j);//æ¯”è¾ƒå‡½æ•°
 //	}
 //	return 0;
 //}
@@ -381,4 +381,23 @@ int main()
 	   printf("%d ",i);
    }
 return 0;
+
 }
+
+//äº¤æ¢ä¸¤ä¸ªå˜é‡çš„å†…å®¹
+//void swap(int* px, int* py) {//å½¢å‚æ˜¯å®å‚çš„ä¸€ä»½ä¸´æ—¶æ‹·è´ ä¿®æ”¹å½¢å‚ä¸èƒ½ä¿®æ”¹å®å‚ å› æ­¤åªèƒ½ä¼ å®å‚çš„åœ°å€
+//	int z = 0;
+//	z = *px;
+//	*px = *py;
+//	*py = z;
+//}
+//int main() {
+//	int a = 100;
+//	int b = 200;
+//	swap(&a,&b);
+//	printf("%d,%d", a, b);
+//	return 0;
+//}
+
+
+
