@@ -370,6 +370,7 @@
 //	return 0;
 //}
 
+//测试continue
 int main()
 {
    int i = 1;
@@ -399,5 +400,115 @@ return 0;
 //	return 0;
 //}
 
+////打印10行杨辉三角
+////1
+////1 1
+////1 2 1
+////1 3 3 1
+////1 4 6 4 1
+//int main() {
+//	int arr[10][10] = { 0 };
+//	int i = 0,j = 0;
+//	for (i = 0; i <= 9; i++) {
+//		arr[i][0] = 1;
+//	}
+//	for (i = 1; i <= 9; i++) {
+//		for (j = 1; j <= 9; j++) {
+//			arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j];
+//		}
+//	}
+//	for (i = 0; i <= 9; i++) {
+//		for (j = 0; j <= 9; j++) {
+//			if(arr[i][j] == 0)
+//			    printf(" ");
+//			else
+//				printf("%d ", arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
 
+//顺序打印正整数的每一位
+//void p(int x) {
+//	if (x > 9)
+//		p(x/10);
+//	printf("%d ", x % 10);
+//}
+//int main() {
+//	int n = 0;
+//	scanf("%d", &n);
+//	p(n);
+//	return 0;
+//}
 
+//测试求数组长度的函数
+//int main() {
+//	char arr[20] = { 'a','b','\32','c'};
+//	char arr1[4] = { 'a','b','\32','c' };
+//	char arr2[20] = { 'a','b','\32','c','\0'};
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	printf("%d\n", sz);
+//	int i = strlen(arr);
+//	printf("%d\n", i);
+//	i = strlen(arr1);
+//	printf("%d\n", i);
+//	 i = strlen(arr2);
+//	printf("%d\n", i);
+//	return 0;
+//}
+
+//作业 用函数解决将两个数组的数归并到一起并按顺序打印
+//void sort(int arr3[])
+//{
+//    int i, j, temp;
+//    for(i = 9; i >= 0; i--)
+//    {
+//        for (j = 0; j < i; j++)
+//        {
+//            if (arr3[j] > arr3[j + 1])
+//            {
+//                temp = arr3[j];
+//                arr3[j] = arr3[j + 1];
+//                arr3[j + 1] = temp;
+//            }
+//        }
+//    }
+//}
+//int main()
+//{
+//    //输入
+//    int arr1[5] = { 0 };
+//    int arr2[5] = { 0 };
+//    int arr3[10] = { 0 };
+//    int i = 0;
+//    printf("输入第一组数（5个）");
+//    for (i = 0; i < 5; i++)
+//    {
+//        scanf("%d", &arr1[i]);
+//    }
+//    printf("输入第二组数（5个）");
+//    for (i = 0; i < 5; i++)
+//    {
+//        scanf("%d", &arr2[i]);
+//    }
+//    //归并到第三个数组
+//    for (i = 0; i < 5; i++)
+//    {
+//        arr3[i] = arr1[i];
+//        arr3[i + 5] = arr2[i];
+//    }
+//    //for (i = 0; i < 10; i++)//检查
+//    //{
+//    //    printf("%d ", arr3[i]);
+//    //}
+//    //排序
+//    sort(arr3);
+//    printf("归并后的数组 ");
+//    for (i = 0; i < 10; i++)//
+//   {
+//       
+//       printf("%d ", arr3[i]);
+//   }
+//    return 0;
+//}
