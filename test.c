@@ -530,3 +530,22 @@ return 0;
 //    printf("%p\n", &arr + 1);
 //    return 0;
 //}
+
+//将原有字符串逆序
+#include<string.h>
+void re(char* str) {
+	char temp = 0;
+	int len = strlen(str);
+	temp = *str;
+	*str = *(str + len - 1);
+	*(str + len - 1) = '\0';
+	if (len > 1)
+		re(str + 1);
+	*(str + len - 1) = temp;
+}
+int main() {
+	char arr[] = { "asdfghj" };
+	re(arr);
+	printf("%s", arr);
+	return 0;
+}
