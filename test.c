@@ -637,3 +637,81 @@ int main() {
 //	}
 //	return 0;
 //}
+
+//int arr[5] 整型数组 
+//int *parr[10] 指针数组
+//int (*parr2)[10] 数组指针 
+//int (*parr3[10])[5] 数组指针的数组 
+// 
+//数组传参 
+//int arr[10]  
+//test(arr)
+//test(int arr[10] / int arr[] / int *arr )
+//
+//int *arr1[10]
+//test(arr1)
+//test(int *arr1[10] / int **arr1)
+//
+//int arr[3][5]
+//test(arr)
+//test(int arr[3][5] / int arr[][5] / int (*arr)[5]
+
+////排序五个字符串
+//#include<stdio.h>
+//#include<string.h>
+//int main() {
+//	char arr[5][100] = { 0 };
+//	char (*arr2[100])[5];
+//	int i = 0;
+//	int j = 0;
+//	char (*temp)[100];
+//	for (i = 0; i < 5; i++) {
+//		arr2[i] = &arr[i];
+//	}
+//	for (i = 0; i < 5; i++) {
+//		printf("请输入第%d个字符串：",i+1);
+//		scanf("%s", arr2[i]);
+//		printf("\n");
+//	}
+//	for (i = 0; i < 5-1; i++) {
+//		for (j = 0; j < 5 - 1 - i; j++) {
+//			if (strcmp(*arr2[j], *arr2[j + 1]) > 0) {
+//				temp = arr2[j + 1];
+//				arr2[j + 1] = arr2[j];
+//				arr2[j] = temp;
+//			}
+//		}
+//	}
+//	for (i = 0; i < 5; i++) {
+//		printf("%s\n", *arr2[i]);
+//	}
+//	return 0;
+//}
+
+////数字的二进制中几个1
+//int count_bits_2(int n) {
+//    int count = 0;
+//    while (n) {
+//        n &= (n - 1);
+//        count++;
+//    }
+//    return count;
+//}
+//int main() {
+//    int n = 0;
+//    scanf("%d",&n);
+//    int x = count_bits_2(n);
+//    printf("%d", x);
+//    return 0;
+//}
+
+//交换变量 但不添加新变量
+//int main() {
+//	int a = 1;
+//	int b = 2;
+//	a = a ^ b;
+//	b = a ^ b;
+//	a = a ^ b;
+//	printf("%d,%d", a, b);
+//	return 0;
+//}
