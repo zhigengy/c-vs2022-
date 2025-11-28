@@ -715,3 +715,281 @@ int main() {
 //	printf("%d,%d", a, b);
 //	return 0;
 //}
+
+//归并两数组改进版
+//#include <stdio.h>
+//#define SIZE 5
+//
+//void bubbleSort(int arr[], int size)
+//{
+//    int i, j, temp;
+//    for (i = size - 1; i >= 0; i--)
+//    {
+//        for (j = 0; j < i; j++)
+//        {
+//            if (arr[j] > arr[j + 1])
+//            {
+//                temp = arr[j];
+//                arr[j] = arr[j + 1];
+//                arr[j + 1] = temp;
+//            }
+//        }
+//    }
+//}
+//
+//int main()
+//{
+//    int arr1[SIZE] = { 0 };
+//    int arr2[SIZE] = { 0 };
+//    int arr3[2 * SIZE] = { 0 };
+//    int i = 0;
+//    // 输入第一个数组
+//    printf("请输入第一组数（%d个整数）：", SIZE);
+//    for (i = 0; i < SIZE; i++)
+//    {
+//        scanf("%d", &arr1[i]);
+//    }
+//    // 输入第二个数组
+//    printf("请输入第二组数（%d个整数）：", SIZE);
+//    for (i = 0; i < SIZE; i++)
+//    {
+//        scanf("%d", &arr2[i]);
+//    }
+//    for (i = 0; i < SIZE; i++)
+//    {
+//        arr3[i] = arr1[i];
+//        arr3[i + SIZE] = arr2[i];
+//    }
+//    // 排序
+//    bubbleSort(arr3, 2 * SIZE);
+//    printf("归并排序后的数组：");
+//    for (i = 0; i < 2 * SIZE; i++)
+//    {
+//        printf("%d ", arr3[i]);
+//    }
+//    printf("\n");
+//    return 0;
+//}
+
+//图书管理系统 增添改查 还有展示 数组有点大 gets也不严谨 用起来有些警告 不过以我的知识目前没什么好的解决办法 
+//由这次编程产生的感悟 有些逻辑错误你细心一下就能发现 不要心急
+//#include <stdio.h>
+//#include<string.h>
+//
+//#define MAX_BOOK 1000//图书馆中图书最大数量
+//#define MAX_TITLE 100//图书书名最长长度
+//#define MAX_AUTHOR 80//图书作者名最长长度
+//#define MAX_PUBLISHER 80//图书出版社名最长长度
+//
+//typedef struct Book {
+//	char title[MAX_TITLE];
+//	char author[MAX_AUTHOR];
+//	char publisher[MAX_PUBLISHER];
+//	int isbn;
+//} Book;
+//
+////清除缓冲区
+//void clear_input_buffer();
+////添加图书
+//void add_book(Book library[MAX_BOOK], int* books);
+////按书名找书
+//void search_book_title(Book library[MAX_BOOK], int* books);
+////按ISBN找书
+//void search_book_ISBN(Book library[MAX_BOOK], int* books);
+////删除图书
+//void delete_book(Book library[MAX_BOOK], int* books);
+////展示图书
+//void display_book(Book library[MAX_BOOK], int* books);
+//
+//void menu() {
+//	printf("社区阅览室图书管理系统\n");
+//	printf("    1.添加图书        \n");
+//	printf("    2.按书名查询图书  \n");
+//	printf("    3.按ISBN查询图书  \n");
+//	printf("    4.删除图书        \n");
+//	printf("    5.显示所有图书    \n");
+//	printf("    0.退出系统        \n");
+//	printf("请选择____\b\b\b\b");
+//}
+//
+//
+//int main() {
+//	int input = 0;
+//	//初始化图书馆
+//	Book library[MAX_BOOK] = { 0 };
+//	int books = 0;
+//	int* p = &books;
+//	do {
+//		menu();
+//		scanf("%d", &input);
+//		switch (input) {
+//		case 1:
+//			clear_input_buffer();
+//			add_book(library, p);
+//			break;
+//		case 2:
+//			clear_input_buffer();
+//			search_book_title(library, p);
+//			break;
+//		case 3:
+//			clear_input_buffer();
+//			search_book_ISBN(library, p);
+//			break;
+//		case 4:
+//			clear_input_buffer();
+//			delete_book(library, p);
+//			break;
+//		case 5:
+//			clear_input_buffer();
+//			display_book(library, p);
+//			break;
+//		case 0:
+//			printf("退出系统\n");
+//			break;
+//		default:
+//			printf("无效选择，请重新输入\n");
+//			break;
+//		}
+//	} while (input);
+//	return 0;
+//}
+//
+//
+////逻辑功能实现函数
+//void clear_input_buffer() {
+//	int c;
+//	while ((c = getchar()) != '\n' && c != EOF);
+//}
+//
+//void add_book(Book library[MAX_BOOK], int* books) {
+//	if ((*books) >= MAX_BOOK) {
+//		printf("图书馆已满，无法继续添加新图书\n");
+//		return;
+//	}
+//	Book newbook = { 0,0,0,0 };
+//	printf("请输入书名: ");
+//	gets(newbook.title);
+//	printf("请输入作者: ");
+//	gets(newbook.author);
+//	printf("请输入出版社: ");
+//	gets(newbook.publisher);
+//	printf("请输入ISBN: ");
+//	scanf("%d", &newbook.isbn);
+//	library[*books] = newbook;
+//	(*books)++;
+//	printf("完成\n");
+//	clear_input_buffer();
+//	printf("按回车继续");
+//	clear_input_buffer();
+//}
+//
+//void search_book_title(Book library[MAX_BOOK], int* books) {
+//	if ((*books) == 0) {
+//		printf("图书馆中没有图书！\n");
+//		clear_input_buffer();
+//		printf("按回车继续");
+//		clear_input_buffer();
+//		return;
+//	}
+//	char bookname[MAX_TITLE] = { 0 };
+//	int i = 0;
+//	int find = 1;
+//	printf("请输入要查询的书名: ");
+//	gets(bookname);
+//	for (i = 0; i < (*books); i++) {
+//		if (strcmp(bookname, library[i].title) == 0) {
+//			printf("找到图书：\n");
+//			printf("书名: %s\n", library[i].title);
+//			printf("作者: %s\n", library[i].author);
+//			printf("出版社: %s\n", library[i].publisher);
+//			printf("ISBN: %d\n", library[i].isbn);
+//			find = 0;
+//		}
+//	}
+//	if (find != 0)
+//		printf("未找到包含名为 %s 的图书。\n", bookname);
+//	clear_input_buffer();
+//	printf("按回车继续");
+//	clear_input_buffer();
+//}
+//
+//void search_book_ISBN(Book library[MAX_BOOK], int* books) {
+//	if ((*books) == 0) {
+//		printf("图书馆中没有图书！\n");
+//		clear_input_buffer();
+//		printf("按回车继续");
+//		clear_input_buffer();
+//		return;
+//	}
+//	int bookISBN = 0;
+//	int i = 0;
+//	int find = 1;
+//	printf("请输入要查询的书籍的ISBN: ");
+//	scanf("%d", &bookISBN);
+//	for (i = 0; i < (*books); i++) {
+//		if (bookISBN == library[i].isbn) {
+//			printf("找到图书：\n");
+//			printf("书名: %s\n", library[i].title);
+//			printf("作者: %s\n", library[i].author);
+//			printf("出版社: %s\n", library[i].publisher);
+//			printf("ISBN: %d\n", library[i].isbn);
+//			find = 0;
+//		}
+//	}
+//	if (find != 0)
+//		printf("未找到ISBN为 %d 的图书。\n", bookISBN);
+//	clear_input_buffer();
+//	printf("按回车继续");
+//	clear_input_buffer();
+//}
+//
+//void delete_book(Book library[MAX_BOOK], int* books) {
+//	if ((*books) == 0) {
+//		printf("图书馆中没有图书！无法删除\n");
+//		clear_input_buffer();
+//		printf("按回车继续");
+//		clear_input_buffer();
+//		return;
+//	}
+//	int bookISBN = 0;
+//	int i = 0;
+//	int find = 1;
+//	printf("请输入要删除的书籍的ISBN: ");
+//	scanf("%d", &bookISBN);
+//	for (i = 0; i < (*books); i++) {
+//		if (bookISBN == library[i].isbn) {
+//			for (; i < (*books) - 1; i++) {
+//				library[i] = library[i + 1];
+//			}
+//			(*books)--;
+//			find = 0;
+//			printf("图书删除成功！\n");
+//			break;
+//		}
+//	}
+//	if (find != 0)
+//		printf("未找到ISBN为 %d 的图书。\n", bookISBN);
+//	clear_input_buffer();
+//	printf("按回车继续");
+//	clear_input_buffer();
+//}
+//
+//void display_book(Book library[MAX_BOOK], int* books) {
+//	if ((*books) == 0) {
+//		printf("图书馆中没有图书！无法删除\n");
+//		clear_input_buffer();
+//		printf("按回车继续");
+//		clear_input_buffer();
+//		return;
+//	}
+//	for (int i = 0; i < (*books); i++) {
+//		printf("图书 %d:\n", i + 1);
+//		printf("  书名: %s\n", library[i].title);
+//		printf("  作者: %s\n", library[i].author);
+//		printf("  出版社: %s\n", library[i].publisher);
+//		printf("  ISBN: %d\n", library[i].isbn);
+//	}
+//	clear_input_buffer();
+//	printf("按回车继续");
+//	clear_input_buffer();
+//}
