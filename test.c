@@ -993,3 +993,24 @@ int main() {
 //	printf("按回车继续");
 //	clear_input_buffer();
 //}
+
+//一些难理解的代码
+//#include <stdio.h>
+//#include <signal.h>
+//
+//typedef void(*pft)(int);  // 把void(*)(int)类型重命名为pft
+//
+//int main()
+//{
+//    // 修正注释中的表达式
+//    // (*(void (*)())0)();  // 这是一个函数调用，将0强制转换为函数指针并调用
+//
+//    // signal函数的声明（实际上在signal.h中已定义）
+//    // void (*signal(int, void(*)(int)))(int);
+//
+//    // 使用typedef简化signal函数的声明
+//    pft signal(int, pft);
+//
+//    return 0;
+//}
+
