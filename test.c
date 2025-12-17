@@ -1078,3 +1078,49 @@ int main() {
 //        if (t != '\0') putchar(t); }
 //    
 //}
+
+//求一个二维数组中每行的最大值和每行的和。
+#include <stdio.h>
+#include <stdlib.h>
+#include<time.h>
+int main()
+{
+    int a[5][5], b[5], c[5], i, j, k, s;
+    srand((unsigned int)time(NULL));
+    // 初始化数组
+    for(i = 0; i < 5; i++)
+        for(j = 0; j < 5; j++)
+            a[i][j] = rand() % 100;
+    // 处理逻辑
+    for(i = 0; i < 5; i++)
+    {
+        /*****************SPACE*********/
+          s = 0;  // 初始化s
+          k = a[i][0];
+        for(j = 0; j < 5; j++)
+        {
+            /*****************SPACE*********/
+            if(k < a[i][j])
+            {
+                k = a[i][j];
+            }
+        s = s + a[i][j];
+        } 
+        b[i] = k;
+        /*****************SPACE*********/
+        c[i] = s;
+    }
+    
+    // 打印结果
+    for(i = 0; i < 5; i++)
+    {
+        for(j = 0; j < 5; j++)
+        {
+            /*****************SPACE*********/
+            printf("%5d", a[i][j]);
+        }
+        printf("%5d%5d", b[i], c[i]);
+        printf("\n");
+    }
+    return 0;
+}
