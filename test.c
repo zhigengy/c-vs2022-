@@ -1124,3 +1124,34 @@ int main()
     }
     return 0;
 }
+
+//typedef struct student stu;
+//typedef struct love {
+//    char* p;
+//    stu* q;
+//    stu* w;
+//}love;
+//
+//typedef struct student {
+//    char name[20];
+//    int age;
+//    love who;
+//}stu;
+//
+//int main() {
+//    int i;
+//    stu stu[] = {
+//        {"高", 18,"爱的是",stu+1,stu+2},
+//        {"甄", 18,"爱的是",stu,NULL},
+//        {"王", 18,"爱的是",stu,NULL},
+//    };
+//
+//    for (i = 0; i < 3; i++) {
+//        if (stu[i].who.w->name != NULL) {
+//            printf("%s%s%s和%s\n", stu[i].name, stu[i].who.p, stu[i].who.q->name, stu[i].who.w->name);
+//        }
+//        else
+//            printf("%s%s%s\n", stu[i].name, stu[i].who.p, stu[i].who.q->name);
+//    }
+//    return 0;
+//}
