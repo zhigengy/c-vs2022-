@@ -1155,3 +1155,383 @@ int main()
 //    }
 //    return 0;
 //}
+
+////指针+大小端存储+强制类型转换
+//int main()
+//{
+//    int a[4] = { 1, 2, 3, 4 };
+//    int* ptr1 = (int*)(&a + 1);//指向a的下一数组的首地址
+//    int* ptr2 = (int*)((int)a + 1);//  a中元素存储格式为 01 00 00 00     02 00 00 00     03 00 00 00    因此p2指 00 00 00 02 
+//    printf("%x,%x\n", ptr1[-1], *ptr2);//0x 00 00 00 04  0x 02 00 00 00 
+//    printf("0x%08x,0x%08x\n", ptr1[-1], *ptr2); //看得更清楚
+//    return 0;
+//}
+
+//#include <assert.h>
+//size_t my_strlen(const char* str)
+//{
+//    size_t count = 0;
+//    assert(str);  
+//    while (*str != '\0')
+//    {
+//        count++;
+//        str++;
+//    }
+//    return count;
+//}
+//
+//int main()
+//{
+//    const char* str1 = "Hello World";
+//    printf("字符串 \"%s\" 的长度：%zu\n", str1, my_strlen(str1));
+//
+//    const char* str2 = "";
+//    printf("字符串 \"%s\" 的长度：%zu\n", str2, my_strlen(str2));  
+//
+//    const char* str3 = "C Programming!";
+//    printf("字符串 \"%s\" 的长度：%zu\n", str3, my_strlen(str3)); 
+//
+//    const char* str4 = "A";
+//    printf("字符串 \"%s\" 的长度：%zu\n", str4, my_strlen(str4));  
+//    my_strlen(NULL);//错误
+//
+//    return 0;
+//}
+
+
+//char* my_strcopy(char* dest, const char* src) {
+//	assert(dest && src);
+//	char* ret = dest;
+//	while (*dest++ = *src++) {
+//		;
+//	}
+//	return ret;
+//}//strcopy的模拟实现 返回目标空间的首地址
+
+//#include<string.h>
+//int main() {
+//	char arr1[20] = { "Hello" };
+//	char arr2[] = { "World" };
+//	strcat(arr1, arr2);
+//	printf("%s", arr1);
+//	return 0;
+//}//字符串追加
+//
+//长度受限的字符串函数
+//strncopy
+//strncat
+//strncmp
+//(arr1,arr2,n)
+
+//strstr 查找子串
+//模拟实现
+//char* my_strstr(const char* str1, const char* str2) {
+//	assert(str1 && str2);
+//	char* s1 = str1;
+//	char* s2 = str2;
+//	char* p = str1;
+//	while (*p) {
+//		s1 = p;
+//		s2 = str2;
+//		while (s1 != "\0" && s2 != "\0" && *s1 == *s2) {
+//			s1++;
+//			s2++;
+//		}
+//		if (*s2 == "\0") {
+//			return p;
+//		}
+//		p++;
+//	}
+//	return NULL;
+//}
+
+////切割字符串
+//#include <string.h>
+//
+//int main()
+//{
+//    const char* sep = "@.";
+//    char email[] = "zhangpengwei@bitejiuyeke.com";
+//    char cp[30] = { 0 };
+//    strcpy(cp, email);
+//
+//    char* ret = strtok(cp, sep);
+//    printf("%s\n", ret);
+//
+//    ret = strtok(NULL, sep);
+//    printf("%s\n", ret);
+//
+//    ret = strtok(NULL, sep);
+//    printf("%s\n", ret);
+//    return 0;
+//
+//    //或者写循环
+//    char* ret = NULL;
+//    for (ret = strtok(cp, sep); ret != NULL; ret = strtok(NULL, sep)) {
+//        printf("%s\n", ret);
+//    }
+//}
+
+////内存函数
+////memcpy(arr2,arr1,20)最后为字节数 不用来处理重叠的内存的 比如自己的一部分拷贝自己
+//int main() {
+//	int arr1[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	memmove(arr1 + 2, arr1, 20);
+//	return 0;
+//}
+////涉及内存重叠用memmoveVS用memcpy也可以但其他编译器就不行
+//memmove模拟实现 
+//当dest在src之前就是从前到后的数据处理 在src之后就是从后往前的数据处理
+
+//void* my_memmove(void* dest, const void* src, int num) {
+//	assert(dest && src);
+//	void* ret = dest;
+//	if (dest > src) {
+//		while (num--) {
+//			*(char*)dest = *(char*)src;
+//			dest = (char*)dest + 1;
+//			src = (char*)src + 1;
+//		}
+//	}
+//	else {
+//		while (num--) {
+//			*((char*)dest + num) = *((char*)src + num);
+//		}
+//	}
+//	return ret;
+//}
+//memcmp类似strcmp
+
+//日本某地发生了一件谋杀案，警察通过排查确定杀人凶手必为 4 个嫌疑犯的一个。
+//以下为 4 个嫌疑犯的供词:A 说：不是我。B 说：是 C。C 说：是 D。D 说 : C 在胡说。
+//已知 3 个人说了真话，1 个人说的是假话。现在请根据这些信息，写一个程序来确定到底谁是凶手。
+//int main()
+//{
+//    int killer = 0;
+//    for (killer = 'a'; killer <= 'd'; killer++)
+//    {
+//        if ((killer != 'a') + (killer == 'c')
+//            + (killer == 'd') + (killer != 'd') == 3)
+//        {
+//            printf("%c\n", killer);
+//        }
+//    }
+//
+//    return 0;
+//}
+
+////有一个数字矩阵，矩阵的每行从左到右是递增的，矩阵从上到下是递增的，请编写程序在这样的矩阵中查找某个数字是否存在。
+//struct Point//为了返回找到的坐标
+//{
+//    int x;
+//    int y;
+//};
+//
+//struct Point find_num(int arr[3][3], int r, int c, int k)
+//{
+//    int x = 0;
+//    int y = c - 1;
+//    struct Point p = { -1, -1 };
+//    while (x <= r - 1 && y >= 0)
+//    {
+//        if (k < arr[x][y])
+//        {
+//            y--;
+//        }
+//        else if (k > arr[x][y])
+//        {
+//            x++;
+//        }
+//        else
+//        {
+//            p.x = x;
+//            p.y = y;
+//            return p;
+//        }
+//    }
+//    return p;
+//}
+//int main()
+//{
+//    int arr[3][3] = { 1,2,3,4,5,6,7,8,9 };
+//    int k = 0;
+//    scanf("%d", &k);
+//    struct Point ret = find_num(arr, 3, 3, k);
+//    printf("%d %d\n", ret.x, ret.y);
+//    return 0;
+//}
+
+////第二种
+//int find_num(int arr[3][3], int* px, int* py, int k)
+//{
+//    int x = 0;
+//    int y = *py - 1;
+//    while (x <= *px - 1 && y >= 0)
+//    {
+//        if (k < arr[x][y])
+//        {
+//            y--;
+//        }
+//        else if (k > arr[x][y])
+//        {
+//            x++;
+//        }
+//        else
+//        {
+//            *px = x;
+//            *py = y;
+//            return 1;
+//        }
+//    }
+//    *px = -1;
+//    *py = -1;
+//    return 0;//找不到
+//}
+//
+//int main()
+//{
+//    int arr[3][3] = { 1,2,3,4,5,6,7,8,9 };
+//    int k = 0;
+//    scanf("%d", &k);
+//    int x = 3;
+//    int y = 3;
+//    int ret = find_num(arr, &x, &y, k);
+//    printf("%d\n", ret);
+//    //再次调用则应重新设定x,y
+//    return 0;
+//}
+
+//#include <stdlib.h>
+//#include <string.h>
+//#include <errno.h>
+//
+//int main()
+//{
+//    // 动态内存开辟
+//    int* p = (int*)malloc(40);
+//    if (p == NULL)
+//    {
+//        printf("%s\n", strerror(errno));
+//        return 1;
+//    }
+//
+//    // 使用动态分配的内存
+//    int i = 0;
+//    for (i = 0; i < 10; i++)
+//    {
+//        *(p + i) = i;  // 指针偏移方式赋值
+//    }
+//
+//    // 打印内存中的数据
+//    for (i = 0; i < 10; i++)
+//    {
+//        printf("%d ", *(p + i));
+//    }
+//    //扩容
+//    int* ptr = (int*)realloc(p, 80);
+//    if (ptr != NULL) {
+//        p = ptr;
+//    }
+//
+//    // 释放动态内存并置空
+//    free(p);
+//    p = NULL;
+//
+//    return 0;
+//}
+
+////柔性数组
+//typedef struct {
+//    int len;         
+//    char data[];      // 柔性数组（C99写法），也可以写 char data[0]
+//} FlexArray;
+//int main() {
+//    FlexArray* fa = (FlexArray*)malloc(sizeof(FlexArray) + 40);
+//    if (fa == NULL) {
+//        return 1;
+//    }
+//    FlexArray* fa_new = (FlexArray*)realloc(fa, sizeof(FlexArray) + 80);
+//    if (fa_new == NULL) {
+//        return 1;
+//    }
+//    fa = fa_new;
+//    free(fa);
+//    fa = NULL;
+//
+//    return 0;
+//}
+
+//#include <stdlib.h>
+//#include <string.h>
+//
+//typedef struct {
+//    char name[20];
+//    int age;
+//    float score;
+//} Student;
+//
+//int main() {
+//    char ch;
+//    char buffer[1024];
+//    Student stu = { "ZhangSan", 18, 95.5 }, stu_read;
+//    int num;
+//    FILE* fp = fopen("demo.txt", "w");
+//    if (fp == NULL) { perror("fopen failed"); exit(1); }
+//    fputc('H', fp);
+//    fputc('i', fp);
+//    fclose(fp);
+//
+//    fp = fopen("demo.txt", "r");
+//    if (fp == NULL) { perror("fopen failed"); exit(1); }
+//    while ((ch = fgetc(fp)) != EOF) {
+//        printf("%c", ch); 
+//    }
+//    fclose(fp);
+//    printf("\n\n");
+//
+//    fp = fopen("demo.txt", "w");
+//    if (fp == NULL) { perror("fopen failed"); exit(1); }
+//    fputs("Hello C\n", fp);
+//    fputs("File Operation\n", fp);
+//    fclose(fp);
+//
+//    fp = fopen("demo.txt", "r");
+//    if (fp == NULL) { perror("fopen failed"); exit(1); }
+//    // 格式：fgets(缓冲区, 缓冲区大小, 文件指针)
+//    // 特点：最多读「缓冲区大小-1」个字符
+//    while (fgets(buffer, sizeof(buffer), fp) != NULL) {
+//        printf("%s", buffer); 
+//    }
+//    fclose(fp);
+//    printf("\n");
+//
+//    fp = fopen("demo.txt", "w");
+//    if (fp == NULL) { perror("fopen failed"); exit(1); }
+//    fprintf(fp, "Name: %s, Age: %d, Score: %.1f\n", "LiSi", 19, 88.5);
+//    fprintf(fp, "Number: %d\n", 1001);
+//    fclose(fp);
+//
+//    fp = fopen("demo.txt", "r");
+//    if (fp == NULL) { perror("fopen failed"); exit(1); }
+//    char name_buf[20];
+//    int age_buf;
+//    float score_buf;
+//    fscanf(fp, "Name: %s, Age: %d, Score: %f\n", name_buf, &age_buf, &score_buf);
+//    fscanf(fp, "Number: %d\n", &num);
+//    fclose(fp);
+//
+//    fp = fopen("demo.bin", "wb");
+//    if (fp == NULL) { perror("fopen failed"); exit(1); }
+//    // 格式：fwrite(数据地址, 单个元素大小, 元素个数, 文件指针)
+//    fwrite(&stu, sizeof(Student), 1, fp);
+//    fclose(fp);
+//
+//    fp = fopen("demo.bin", "rb");
+//    if (fp == NULL) { perror("fopen failed"); exit(1); }
+//    // 格式：fread(存储地址, 单个元素大小, 元素个数, 文件指针)
+//    fread(&stu_read, sizeof(Student), 1, fp);
+//    fclose(fp);
+//
+//    return 0;
+//}
+
