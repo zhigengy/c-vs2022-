@@ -137,4 +137,61 @@
 //	return 0;
 //}
 
+////判断 101 到 200 之间的素数
+//int isPrime(int num) {
+//	int i = 0;
+//	for (i = 2; i < num / 2; i++) {
+//		if (num % i == 0) {
+//			return 1;
+//		}
+//	}
+//	return 0;
+//}
+//int main() {
+//	int i = 0;
+//	int ret = 0;
+//	for (i = 101; i <= 200; i += 2) {
+//		ret = isPrime(i);
+//		if (ret == 0) {
+//			printf("%d ", i);
+//		}
+//	}
+//	return 0;
+//}
+
+////将一个正整数分解质因数。例如：输入 90,打印出 90=2*3*3*5
+//#include <math.h>
+//int isPrime(int num) {
+//	int i = 0;
+//	for (i = 2; i <= sqrt(num); i++) {
+//		if (num % i == 0) {
+//			return 1;
+//		}
+//	}
+//	return 0;
+//}
+//int main() {
+//	int num = 0;
+//	if (scanf("%d", &num) != 1) {
+//		printf("错误");
+//		return 1;
+//	}
+//	if (num < 0) {
+//		printf("错误");
+//		return 1;
+//	}
+//	printf("%d=", num);
+//	int i = 0;
+//	int ret = num;
+//		for (i = 2; i <= num; i++) {
+//			while (ret % i == 0) {
+//				printf("%d", i);
+//				ret = ret / i;
+//				
+//				if (ret != 1) printf("*");
+//			}
+//		}
+//	
+//	return 0;
+//}
 
