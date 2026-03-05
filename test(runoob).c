@@ -195,3 +195,61 @@
 //	return 0;
 //}
 
+////利用条件运算符的嵌套来完成此题：学习成绩 >= 90分的同学用A表示，60 - 89分之间的用B表示，60分以下的用C表示。
+//int main() {
+//	int i = 0;
+//	if (scanf("%d", &i) != 1) {
+//		printf("错误");
+//		return 1;
+//	}
+//	if (i < 0 || i>100) {
+//		printf("错误");
+//		return 1;
+//	}
+//	char grade = ((i >= 90) ? 'A' : (i >= 60) ? 'B' : 'C');
+//	printf("%c", grade);
+//	return 0;
+//}
+
+////输入两个正整数m和n，求其最大公约数和最小公倍数。
+//int main() {
+//	int i = 1, j = 0, m = 0, n = 0;
+//	if (scanf("%d %d", &m, &n) != 2) {
+//		printf("错误");
+//		return 1;
+//	}
+//	if (m <= 0 || n <= 0) {
+//		printf("错误");
+//		return 1;
+//	}
+//	j = m * n;
+//	while (i) {
+//		i = m % n;
+//		m = n;
+//		n = i;
+//	}
+//	i = m;
+//	j = j / i;
+//	printf("%d %d", i, j);
+//	return 0;
+//}
+
+////求 s=a+aa+aaa+aaaa+aa...a 的值，其中 a 是一个数字，例如 2+22+222+2222+22222 (此时共有5个数相加)，几个数相加有键盘控制。
+//int main() {
+//	int num = 0,n = 0,s = 0;
+//	if (scanf("%d %d", &num, &n) != 2) {
+//		printf("错误");
+//		return 1;
+//	}
+//	if (num < 0 || num>9 || n < 0) {
+//		printf("错误");
+//		return 1;
+//	}
+//	int ret = 0;
+//	for (int i = 1; i <= n;i++) {
+//		ret = ret * 10 + num;
+//		s += ret;
+//	}
+//	printf("%d", s);
+//	return 0;
+//}
