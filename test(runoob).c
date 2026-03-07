@@ -367,3 +367,78 @@
 //	printf("%0.5f", sum);
 //	return 0;
 //}
+
+////求 1 + 2! + 3! + ... + 20! 的和。
+//int main() {
+//	int i = 0, n = 20;
+//	long long sum = 0, ret = 1;
+//	for (i = 1; i <= n; i++) {
+//		ret = ret * i;
+//		sum += ret;
+//	}
+//	printf("%lld", sum);
+//	return 0;
+//}
+
+////利用递归函数调用方式，逆序字符串
+//#include<string.h>
+//void bianhuan(char* str,char*left,char* right) {
+//	if (left >= right) {
+//		return;
+//	}
+//	char temp = *left;
+//	*left = *right;
+//	*right= temp;
+//	bianhuan(str, ++left, --right);
+//}
+//int main() {
+//	char arr[20] = { 0 };
+//	scanf("%s", arr);
+//	int n = strlen(arr);
+//	char* left = arr;
+//	char* right = &arr[n-1];
+//	bianhuan(arr,left,right);
+//	printf("%s", arr);
+//	return 0;
+//}
+
+////只用一个参数
+//#include<string.h>
+//void bianhuan(char* str) {
+//	int len = strlen(str);
+//	if (len == 1) {
+//		return ;
+//	}
+//	char temp = str[0];
+//	str[0] = str[len - 1];
+//	str[len - 1] = temp;
+//	int ret = str[len - 1];
+//	str[len - 1] = '\0';
+//	bianhuan(str+1);
+//	str[len - 1] = ret;
+//}
+//int main() {
+//	char arr[20] = { 0 };
+//	scanf("%s", arr);
+//	bianhuan(arr);
+//	printf("%s", arr);
+//	return 0;
+//}
+
+////逆着打印
+//#include <string.h>  
+//
+//void bianhuan(char* str, int index) {
+//    if (index >= strlen(str)) {
+//        return;
+//    }
+//    bianhuan(str, index + 1);
+//    printf("%c", str[index]);
+//}
+//
+//int main() {
+//    char arr[20] = { 0 };
+//    scanf("%s", arr);
+//    bianhuan(arr, 0);
+//    return 0;
+//}
