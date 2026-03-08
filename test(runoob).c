@@ -442,3 +442,149 @@
 //    bianhuan(arr, 0);
 //    return 0;
 //}
+
+////给一个不多于5位的正整数，要求：一、求它是几位数，二、逆序打印出各位数字。
+//int main() {
+//	int n = 12345;
+//	int count = 0;
+//	while (n) {
+//		int ret = n % 10;
+//		printf("%d ", ret);
+//		n = n / 10;
+//		count++;
+//	}
+//	printf("\n%d", count);
+//	return 0;
+//}
+
+////一个5位数，判断它是不是回文数。即12321是回文数，个位与万位相同，十位与千位相同。
+//int main() {
+//	int n = 0;
+//	if (scanf("%d", &n) != 1) {
+//		printf("错误");
+//		return 1;
+//	}
+//	int count = 0;
+//	int a[5] = { 0 };
+//	while (n) {
+//		a[count] = n % 10;
+//		n = n / 10;
+//		count++;
+//	}
+//	if (count != 5) {
+//		printf("错误");
+//		return 1;
+//	}
+//	if (a[0] == a[4] && a[1] == a[3]) {
+//		printf("yes");
+//	}
+//	return 0;
+//}
+
+////请输入星期几的第一个字母来判断一下是星期几，如果第一个字母一样，则继续判断第二个字母。
+//int main() {
+//	//monday tuesday wednesday thursday friday saturday sunday 
+//	char ch = getchar();
+//	char ret;
+//	switch (ch) {
+//	case 'm':printf("monday");
+//		break;
+//	case'w':printf("wednesday");
+//		break;
+//	case 'f':printf("friday");
+//		break;
+//	case 't':getchar();
+//		printf("请输入下一个");
+//		ret = getchar();
+//		if (ret == 'u') {
+//			printf("tuesday");
+//			break;
+//		}
+//		else if (ret == 'h') {
+//			printf("thursday");
+//			break;
+//		}
+//		else {
+//			printf("wu");
+//			break;
+//		}
+//	case 's':getchar();
+//		printf("请输入下一个");
+//		ret = getchar();
+//		if (ret == 'u') {
+//			printf("sunday");
+//			break;
+//		}
+//		else if (ret == 'a') {
+//			printf("saturday");
+//			break;
+//		}
+//		else {
+//			printf("wu");
+//			break;
+//		}
+//	default:printf("wu");
+//		break;
+//	}
+//	return 0;
+//}
+
+////删除一个字符串中的指定字母，如：字符串 "aca"，删除其中的 a 字母。
+//int main() {
+//	char arr[20] = { 0 };
+//	char ch;
+//	int n = 0;
+//	while ((ch= getchar() )!= '\n') {
+//		arr[n] = ch;
+//		n++;
+//	}
+//	arr[n] = '\0';
+//	printf("shuru\n");
+//	ch = getchar();
+//	for (n = 0; arr[n] != '\0'; n++) {	
+//		if (arr[n] == ch) {
+//			int j = n;
+//			for (; arr[j] != '\0'; j++) {
+//				arr[j] = arr[j + 1];
+//			}
+//			n--;
+//		}
+//	}
+//	arr[n] = '\0';
+//	printf("%s", arr);
+//	return 0;
+//}
+
+////有一个已经排好序的数组。现输入一个数，要求按原来的规律将它插入数组中。
+//int main()
+//{
+//    int a[12] = { 1,4,6,9,13,16,19,28,40,100 };
+//    int k = 10;
+//    int lenght = sizeof(a) / sizeof(int);
+//    int n = lenght-1;
+//    while (a[n] == 0) {
+//        n--;
+//    }
+//    int ret = n;
+//    if (k >= a[n]) {
+//        a[n + 1] = k;
+//    }
+//    else {
+//        for (n = 0; n<=ret; n++) {
+//            if (k > a[n]) {
+//                continue;
+//            }
+//            else {
+//                for (int i = ret; i >= n; i--) {
+//                    a[i + 1] = a[i];
+//                }
+//                a[n] = k;
+//                break;
+//            }
+//        }
+//    }
+//    for (n = 0; n <= ret + 1; n++) {
+//        printf("%d ", a[n]);
+//    }
+//    return 0;
+//}
