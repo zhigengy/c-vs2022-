@@ -402,28 +402,26 @@
 //	return 0;
 //}
 
-////只用一个参数
-//#include<string.h>
-//void bianhuan(char* str) {
-//	int len = strlen(str);
-//	if (len == 1) {
-//		return ;
-//	}
-//	char temp = str[0];
-//	str[0] = str[len - 1];
-//	str[len - 1] = temp;
-//	int ret = str[len - 1];
-//	str[len - 1] = '\0';
-//	bianhuan(str+1);
-//	str[len - 1] = ret;
-//}
+////利用递归函数调用方式，逆序字符串
+//void huan(char* str);
 //int main() {
 //	char arr[20] = { 0 };
 //	scanf("%s", arr);
-//	bianhuan(arr);
+//	huan(arr);
 //	printf("%s", arr);
-//	return 0;
 //}
+//void huan(char* str) {
+//	int len = strlen(str);
+//	if (len <= 1) {
+//		return;
+//	}
+//	char temp = str[0];
+//	str[0] = str[len - 1];
+//	str[len - 1] = '\0';
+//	huan(str + 1);
+//	str[len - 1] = temp;
+//}
+
 
 ////逆着打印
 //#include <string.h>  
