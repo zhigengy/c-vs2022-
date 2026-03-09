@@ -586,3 +586,121 @@
 //    }
 //    return 0;
 //}
+
+////输入数组，最大的与第一个元素交换，最小的与最后一个元素交换，输出数组。
+//void swit(int*, int*);
+//int main() {
+//	int a[5] = { 0 };
+//	int i = 0;
+//	for (i = 0; i < 5; i++) {
+//		if (scanf("%d", &a[i]) != 1) {
+//			printf("错误");
+//			return 1;
+//		}
+//	}
+//	int max = a[0];
+//	int min = a[4];
+//	int j=0, m=0;
+//	for (i = 0; i < 5; i++) {
+//		if (a[i] > max) {
+//			max = a[i];
+//			j = i;
+//		}
+//	}
+//	swit(&a[0], &a[j]);
+//	for (i = 0; i < 5; i++) {
+//		if (a[i] < min) {
+//			min = a[i];
+//			m = i;
+//		}
+//	}
+//	swit(&a[4], &a[m]);
+//	for (i = 0; i < 5; i++) {
+//		printf("%d ", a[i]);
+//	}
+//	return 0;
+//}
+//void swit(int* p1, int* p2) {
+//	int temp = *p1;
+//	*p1 = *p2;
+//	*p2 = temp;
+//}
+
+////有 n 个整数，使其前面各数顺序向后移 m 个位置，最后m个数变成最前面的 m 个数。
+//void re_move(int*);
+//int main() {
+//	int a[10] = { 0,1,2,3,4,5,6,7,8,9 };
+//	int m = 0;
+//	if (scanf("%d", &m) != 1 || m < 0 || m>10) {
+//		printf("错误");
+//		return 1;
+//	}
+//	for (int i = 0; i < m; i++) {
+//		re_move(&a[0]);
+//	}
+//	for (int i = 0; i < 10; i++) {
+//		printf("%d", a[i]);
+//	}
+//	return 0;
+//}
+//void re_move(int* p) {
+//	int temp = *(p + 9);
+//	for (int i = 9; i > 0; i--) {
+//		*(p + i) = *(p + i - 1);
+//	}
+//	*(p) = temp;
+//}
+
+////有n个人围成一圈，顺序排号。从第一个人开始报数（从1到3报数），凡报到3的人退出圈子，问最后留下的是原来第几号的那位。
+//#include <stdlib.h>
+//typedef struct person {
+//	int num;
+//	struct person* next;
+//}person;
+//int main() {
+//	int n = 0;
+//	printf("请输入围成一圈的人数n：");
+//	if (scanf("%d", &n) != 1 || n <= 0) {
+//		printf("错误\n");
+//		return 1;
+//	}
+//	person* head = NULL, * tail = NULL;
+//	for (int i = 0; i < n; i++) {
+//		person* new = (person*)malloc(sizeof(person));
+//		if (new == NULL) {
+//			printf("内存分配失败！\n");
+//			return 1;
+//		}
+//		new->num = i + 1;
+//		new->next = NULL;
+//		if (head == NULL) {
+//			head = new;
+//			tail = new;
+//		}
+//		else {
+//			tail->next = new;
+//			tail = new;
+//		}
+//	}
+//	tail->next = head;
+//	person* ret1 = tail;
+//	person* ret2 = head;
+//	int count = 0;
+//	while (ret2->next!=ret2) {
+//		count++;
+//		if (count == 3) {
+//			ret1->next = ret2->next;
+//			free(ret2);
+//			ret2 = ret1->next;
+//			count = 0;
+//		}
+//		else {
+//			ret1 = ret2;
+//			ret2 = ret2->next;
+//		}
+//
+//	}
+//	printf("最后留下的是原来第%d号\n", ret2->num);
+//	
+//	return 0;
+//}
