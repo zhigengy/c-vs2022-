@@ -740,5 +740,74 @@
 //	}
 //	return sum;
 //}
+
+////八进制转换为十进制
+//int main(void)
+//{
+//    char s[20] = "123";  
+//    int i = 0;
+//    int n = 0;
+//
+//    while (s[i] != '\0') {          // 
+//        n = n * 8 + s[i] - '0';     // 相当于进位 12 = 1*10+2
+//        i++;
+//    }
+//
+//    return 0;
+//}
+
+////求0—7所能组成的奇数个数。
+//int main() {
+//    long sum = 4, s = 4;
+//    int j;
+//    for (j = 2; j <= 8; j++)
+//    {
+//        printf("%d位个数%ld\n", j - 1, s);
+//        if (j <= 2)
+//            s *= 7;
+//        else
+//            s *= 8;
+//        sum += s;
+//    }
+//    printf("%d位个数%ld\n", j - 1, s);
+//    printf("总个数为：%ld\n", sum);
+//    // system("pause");
+//    return 0;
+//	return 0;
+//}
+
+////某个公司采用公用电话传递数据，数据是四位的整数，在传递过程中是加密的，加密规则如下：
+//// 每位数字都加上5,然后用和除以10的余数代替该数字，再将第一位和第四位交换，第二位和第三位交换。
+//int main() {
+//	int num = 0,i = 0;
+//	int arr[4] = { 0 };
+//	if (scanf("%d", &num) != 1) {
+//		printf("错误\n");
+//		return 1;
+//	}
+//	if (num < 1000 || num>9999) {
+//		printf("错误\n");
+//		return 1;
+//	}
+//	arr[0] = num % 10;
+//	arr[1] = num % 100 / 10;
+//	arr[2] = num % 1000 / 100;
+//	arr[3] = num / 1000;
+//	for (i = 0; i < 4; i++) {
+//		arr[i] += 5;
+//		arr[i] %= 10;
+//	}
+//	for (i = 0; i <= 3 / 2; i++)
+//	{
+//		int t = arr[i];
+//		arr[i] = arr[3 - i];
+//		arr[3 - i] = t;
+//	}
+//	for (i = 3; i >= 0; i--)
+//		printf("%d", arr[i]);
+//	return 0;
+//}
+
+
 //	return 0;
 //}
