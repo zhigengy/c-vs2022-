@@ -702,5 +702,43 @@
 //	}
 //	printf("最后留下的是原来第%d号\n", ret2->num);
 //	
+////编写一个函数，输入n为偶数时，调用函数求1/2+1/4+...+1/n,当输入n为奇数时，调用函数1/1+1/3+...+1/n(利用指针函数)。
+//double sum(int n);
+//double sum1(int n);
+//double sum2(int n);
+//double (*p_sum1)(int) = &sum1;
+//double (*p_sum2)(int) = &sum2;
+//int main() {
+//	int n = 0;
+//	if (scanf("%d", &n) != 1) {
+//		printf("错误");
+//		return 1;
+//	}
+//	printf("%f", sum(n));
+//	return 0;
+//}
+//double sum(int n) {
+//	
+//	if (n % 2 == 0) {
+//		return p_sum2(n);
+//	}
+//	if (n % 2 == 1) {
+//		return p_sum1(n);
+//	}
+//}
+//double sum1(int n) {
+//	double sum = 0;
+//	for (double i = 1; i <= n; i += 2) {
+//		sum += 1.0 / i;
+//	}
+//	return sum;
+//}
+//double sum2(int n) {
+//	double sum = 0;
+//	for (double i = 2; i <= n; i += 2) {
+//		sum += 1.0 / i;
+//	}
+//	return sum;
+//}
 //	return 0;
 //}
