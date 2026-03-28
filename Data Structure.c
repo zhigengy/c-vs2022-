@@ -273,5 +273,145 @@
 //	}
 //	return p;
 //}
+
+////双链表
+//#include<assert.h>
+//typedef struct DNode {
+//	int num;
+//	struct DNode* prior, *next;
+//}DNode,*DLinkList;
+//int InsertNextDnode(DNode*, DNode*);
+//int DeleteNextDNode(DNode*);
+//int main() {
+//	return 0;
+//}
+//int InsertNextDNode(DNode* p, DNode* s) {
+//	assert(p || s);
+//	s->next = p->next;
+//	if (p->next != NULL) {
+//		p->next->prior = s;
+//	}
+//	s->prior = p;
+//	p->next = s;
+//	return 0;
+//}
+//int DeleteNextDNode(DNode* p) {
+//	if (p == NULL) {
+//		return -1;
+//	}
+//	DNode* q = p->next;
+//	if (q== NULL) {
+//		return -1;
+//	}
+//	p->next = q->next;
+//	if (q->next != NULL) {
+//		q->next->prior = p;
+//	}
+//	free(q);
+//	return 0;
+//}
+
+//#include <string.h>
+//
+//#define MAXSIZE 10
+//typedef struct {
+//    int data;
+//    int cur;
+//}compoent, StaticLinkList[MAXSIZE];
+//
+//// 初始化静态链表
+//void InitList(StaticLinkList space) {
+//    for (int i = 0; i < MAXSIZE - 1; i++) {
+//        space[i].cur = i + 1;
+//    }
+//    space[MAXSIZE - 1].cur = 0;
+//}
+//
+//// 从备用链表申请一个空闲节点
+//int Malloc_SLL(StaticLinkList space) {
+//    int i = space[0].cur;
+//    if (i != 0) {
+//        space[0].cur = space[i].cur;
+//    }
+//    return i;
+//}
+//
+//// 释放节点到备用链表
+//void Free_SLL(StaticLinkList space, int k) {
+//    space[k].cur = space[0].cur;
+//    space[0].cur = k;
+//}
+//
+//// 获取链表长度（有效数据个数）
+//int ListLength(StaticLinkList space) {
+//    int len = 0;
+//    int i = space[MAXSIZE - 1].cur;
+//    while (i != 0) {
+//        len++;
+//        i = space[i].cur;
+//    }
+//    return len;
+//}
+//
+//// 插入元素：在第 index 个位置插入值 e
+//int ListInsert(StaticLinkList space, int index, int e) {
+//    int len = ListLength(space);
+//    if (index < 1 || index > len + 1) 
+//        return 0;
+//    int new = Malloc_SLL(space);
+//    if (new == 0) 
+//        return 0;
+//    space[new].data = e;
+//    int j = MAXSIZE - 1;  
+//    for (int k = 1; k <= index - 1; k++) {
+//        j = space[j].cur;
+//    }
+//    space[new].cur = space[j].cur;
+//    space[j].cur = new;
+//    return 1;
+//}
+//
+//// 删除元素：删除第 index 个位置的元素
+//int ListDelete(StaticLinkList space, int index) {
+//    int len = ListLength(space);
+//    if (index < 1 || index > len) 
+//        return 0;
+//    int j = MAXSIZE - 1;
+//    for (int k = 1; k <= index - 1; k++) {
+//        j = space[j].cur;
+//    }
+//    int del = space[j].cur;
+//    space[j].cur = space[del].cur;
+//    Free_SLL(space, del);
+//    return 1;
+//}
+//
+//// 遍历打印静态链表
+//void PrintList(StaticLinkList space) {
+//    int i = space[MAXSIZE - 1].cur;
+//    while (i != 0) {
+//        printf("%d ", space[i].data);
+//        i = space[i].cur;
+//    }
+//    printf("\n");
+//}
+//
+//int main() {
+//    StaticLinkList L;
+//    InitList(L);
+//    ListInsert(L, 1, 10);
+//    ListInsert(L, 2, 20);
+//    ListInsert(L, 3, 30);
+//    ListInsert(L, 2, 15);
+//    printf("插入后链表：");
+//    PrintList(L); 
+//    ListDelete(L, 3);
+//    printf("删除第3个元素后：");
+//    PrintList(L); 
+//    printf("链表长度：%d\n", ListLength(L));
+//
+//    return 0;
+//}
+
 //
 //
